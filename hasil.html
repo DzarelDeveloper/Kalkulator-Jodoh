@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Jodoh</title>
+    <link rel="stylesheet" href="src/asset/hasil.css">
+    <link rel="stylesheet" href="src/bootstrap/css/bootstrap.min.css">
+    <script src="src/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="src/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/aos/aos/dist/aos.css">
+    <script src="src/aos/aos/dist/aos.js"></script>
+</head>
+<body class="wrapper">
+    <div class="container">
+        <div class="row justify-content-center row-wrapper">
+            <div class="col-9 col-md-4 text-center">
+                <img src="src/asset/icons8-love-64 1.png" alt="">
+                <h2 class="text-uppercase text-light">kecocokan</h2>
+                <div class="parenth3 d-block">
+                    <h3 class="text-capitalize text-dprimary" id="nama-player">
+                    </h3>
+                </div>
+                <span class="text-capitalize text-light">adalah :</span>
+                <h1 class="persen text-light" data-aos-duration="1000" data-aos="zoom-out"></h1>
+                <p id="tips" data-aos-delay="1000" data-aos-duration="1000" data-aos="fade-up"></p>
+            </div>
+            <div class="col-12 text-center">
+                <a href="form.html" class="btn rounded-pill border text-uppercase">Coba lagi</a>
+            </div>
+        </div>
+    </div>
+    
+<script>
+    AOS.init();
+    var namaKamu = localStorage.getItem('namaKamu');
+    var namaGebetan = localStorage.getItem('namaGebetan');
+    var tips = localStorage.getItem('tips');
+    $('#nama-player').html('- '+namaKamu+' '+'&'+' '+namaGebetan+' -');
+    var lovdata = localStorage.getItem('sum');
+    if (lovdata > 100 ) {
+        $('.persen').html("100"+"%");
+        $('#tips').html('Kecocokan ini bukan main !, buat yang belum jadian cobalah buat deketin doi, buat yang udah jadian mungkin kalian jodoh. Anjay JODOH');
+    }
+    if(lovdata < 100) {
+        $('.persen').html(lovdata+"%");
+        $('#tips').html('Wow, persentase kecocokan ini luar biasa! Kemungkinan besar, orang yang kamu cintai juga merasakan hal yang sama. Untuk kamu yang belum jadian, jangan ragu untuk memulai obrolan santai. Ini bisa jadi langkah awal untuk mempererat kedekatan kalian!');
+    }
+    if(lovdata < 80) {
+        $('.persen').html(lovdata+"%");
+        $('#tips').html('Kalian sudah menunjukkan kecocokan yang sangat baik! Mungkin ini saatnya untuk berpikir lebih serius tentang hubungan kalian. Persentase ini menunjukkan potensi yang besar untuk menjadi pasangan yang bahagia.');
+    }
+    if(lovdata < 60) {
+        $('.persen').html(lovdata+"%");
+        $('#tips').html("Nilai ini menunjukkan bahwa kalian sudah cocok, meskipun tidak sempurna. Ketika ada masalah, ingatlah untuk berdiskusi dengan baik. Komunikasi adalah kunci untuk menjaga hubungan tetap harmonis.");
+    }
+    if(lovdata < 40) {
+        $('.persen').html(lovdata+"%");
+        $('#tips').html("Meskipun persentase ini terbilang rendah, jangan khawatir! Kecocokan itu bukan satu-satunya faktor yang menentukan hubungan. Yang terpenting adalah bagaimana kalian saling memahami dan menghargai satu sama lain.");
+    } 
+    if(lovdata < 20) {
+        $('.persen').html(lovdata+"%");
+        $('#tips').html("Hoo, nilai ini cukup mengejutkan! Tapi jangan panik, setiap hubungan itu unik. Mari kita fokus pada hal-hal positif dan jangan terlalu serius. Terkadang, yang terpenting adalah perjalanan yang kalian lalui bersama.");
+    }
+</script>
+</body>
+</html>

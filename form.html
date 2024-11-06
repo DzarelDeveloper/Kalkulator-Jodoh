@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Jodoh</title>
+    <link rel="stylesheet" href="src/asset/form.css">
+    <link rel="stylesheet" href="src/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/aos/aos/dist/aos.css">
+    <script src="src/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="src/aos/aos/dist/aos.js"></script>
+    <script src="src/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="wrapper">
+
+    <!-- ----------------------title----------------- -->
+    <div class="container">
+        <div class="row justify-content-center row-wrapper">
+            <div class="col-9 col-md-4 text-center">
+                <img src="src/asset/icons8-love-64 1.png" alt="">
+                <h1 class="text-uppercase">kalkulator jodoh</h1>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------title END----------------- -->
+    
+    <!-- ----------------------form----------------- -->
+    <div class="container">
+        <form action="hasil.html" id="form-submit">
+            <div class="row justify-content-center px-3 row-wrapper">
+                <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" class="col-12 col-lg-4 nama-player text-center">
+                    <label for="nama_kamu" class="text-uppercase text-light">-Nama kamu-</label>
+                    <input type="text" class="form-control" id="nama_kamu">
+                </div>
+                <div data-aos="fade-up" data-aos-once="true" data-aos-delay="100" data-aos-duration="1000" class="col-12 col-lg-4 nama-player text-center">
+                    <label for="nama_kamu" class="text-uppercase text-light">-Nama Pasangan kamu-</label>
+                    <input type="text" class="form-control" id="nama_gebetan">
+                </div>
+                <div data-aos="fade-up" data-aos-once="true" data-aos-delay="150" data-aos-duration="1000" class="col-12 text-center">
+                    <button type="button" id="btn-hitung" class="btn rounded-pill border text-uppercase">Hitung kecocokan</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- ----------------------form END----------------- -->
+<script>
+    $('#btn-hitung').click(function() {
+        var p1 = $('#nama_kamu').val();
+        var p2 = $('#nama_gebetan').val();
+
+        if(p1 == ""){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Nama Kamu Perlu diisi',
+            })
+        } else if (p1.length <=2 ) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Nama Kamu minimal Masukan 3 karakter',
+            })
+        } else if(!isNaN(p1)){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Nama Kamu Harus berupa Huruf',
+            })
+        } else if(p2 == ""){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Nama pasangan kamu harus diisi',
+            })
+        } else if (p2.length <=2 ) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Nama Pasangan kamu minimal Masukan 3 karakter',
+            })
+        } else if(!isNaN(p2)){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Nama Kamu Harusa berupa Huruf',
+            })
+        } else{
+            $('#form-submit').submit(); 
+            let sum = Math.random()*100;
+            let fix = Math.floor(sum);
+            localStorage.setItem('sum', fix);
+            localStorage.setItem('namaKamu', p1);
+            localStorage.setItem('namaGebetan', p2);
+
+        }
+    });
+    AOS.init();
+// localStorage.setItem('lovdata', lovdata);
+// var lovdata = Math.random() * 100;
+// lovdata = Math.floor(lovdata);
+</script>
+</body>
+</html>
