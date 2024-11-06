@@ -1,0 +1,36 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    background-image: linear-gradient(to top, #FA0000, #FF6A6A);
+    width: 100% !important;
+    height: 100vh;
+}
+.row-wrapper {
+    height: 90vh;
+    position: relative;
+}
+
+.row-wrapper .col-9 h1 {
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 76px;
+}
+
+.row-wrapper .col-9 {
+    margin-top: -70px;
+}
+
+.row-wrapper .col-9 h1 span {
+    color: #FAFF00;
+}
+
+.row-wrapper .col-9 a {
+    margin-bottom: -120px;
+    width: 236px;
+    color: white;
+    box-shadow: 0px 2px 4px -3px black;
+    background: #DD2020;
+    font-family: 'Inter', sans-serif;
+}

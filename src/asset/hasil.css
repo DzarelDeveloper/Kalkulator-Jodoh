@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    background-image: linear-gradient(to top, #FA0000, #FF6A6A);
+    width: 100% !important;
+    height: 100vh;
+}
+.row-wrapper .col-9 h1 {
+    letter-spacing: 1px;
+}
+.row-wrapper .col-9 {
+    margin-top: 30px;
+}
+.text-dprimary {
+    color: #FAFF00;
+    font-family: 'Inter', sans-serif;
+}
+.row-wrapper .col-9 span {
+    font-family: 'Inter', sans-serif;
+}
+.row-wrapper .col-9 p {
+    color: #FAFF00;
+}
+.persen {
+    font-family: 'Inter', sans-serif;
+    font-size: 120px;
+    font-weight: bolder;
+}
+.row-wrapper .col-12 a {
+    /* margin-bottom: -50px; */
+    width: 236px;
+    color: white;
+    box-shadow: 0px 2px 4px -3px black;
+    background: #DD2020;
+    font-family: 'Inter', sans-serif;
+}
